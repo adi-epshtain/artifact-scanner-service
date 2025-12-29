@@ -1,4 +1,4 @@
-from typing import AsyncGenerator
+from typing import Annotated, AsyncGenerator
 
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
@@ -25,5 +25,5 @@ async def get_session() -> AsyncGenerator[AsyncSession, None]:
 
 
 # Type alias for dependency injection
-SessionDep = Depends(get_session)
+SessionDep = Annotated[AsyncSession, Depends(get_session)]
 
