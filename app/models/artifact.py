@@ -8,7 +8,6 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from app.models.enums import ScanResult, ScanStatus
 
 
-# Short explanationdd:
 # The GUID class is a custom SQLAlchemy type decorator that ensures the UUID (GUID)
 # is handled as a string in the database (for SQLite compatibility), and transparently
 # converts between Python's uuid.UUID objects and their string representation
